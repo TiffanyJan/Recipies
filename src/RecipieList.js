@@ -1,5 +1,5 @@
 import React from "react";
 
-export default function RecipieList() {
-  return <div>To Do List</div>;
+export default function RecipieList(props) {
+  return <div>{props.todos.length}</div>;
 }
