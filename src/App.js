@@ -8,6 +8,9 @@ function App() {
     <>
       <RecipieList />
       <input type="text"></input>
+      <button>Add Tasks</button>
+      <button>Clear Tasks</button>
+      <div>Tasks Left:</div>
     </>
   );
 }
