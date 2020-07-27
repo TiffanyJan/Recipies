@@ -6,9 +6,13 @@ function App() {
   const [todos, setTodos] = useState([]);
   const todoNameRef = useRef();
 
-  function handleAddTodo() {
+  function handleAddTodo(e) {
     const name = todoNameRef.current.value;
-
+    setTodos((prevTodos) => {
+      return [...prevTodos,
+        { id: todos.length + 1, name: name, complete: false },
+      ];
+    });
     if (name == "") return;
     todoNameRef.current.value = null;
   }
