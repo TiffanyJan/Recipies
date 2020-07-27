@@ -1,5 +1,6 @@
 import React from "react";
+import Todo from "./Todo";
 
 export default function RecipieList(props) {
-  return <div>{props.todos.length}</div>;
+  return props.todos.map((todo) => <Todo todo={todo} />);
 }
