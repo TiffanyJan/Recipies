@@ -3,7 +3,10 @@ import RecipieList from "./RecipieList";
 import "./App.css";
 
 function App() {
-  const [todos, setTodos] = useState(["todo 1", "todo 2"]);
+  const [todos, setTodos] = useState([
+    { id: 1, name: "madusha", complete: false },
+    { id: 2, name: "tiff", complete: true },
+  ]);
 
   return (
     <>

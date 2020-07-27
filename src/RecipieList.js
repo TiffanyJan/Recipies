@@ -2,5 +2,5 @@ import React from "react";
 import Todo from "./Todo";
 
 export default function RecipieList(props) {
-  return props.todos.map((todo, index) => <Todo key={index} todo={todo} />);
+  return props.todos.map((todo) => <Todo key = {todo.id} todo={todo} />);
 }
