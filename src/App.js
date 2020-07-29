@@ -24,12 +24,20 @@ function App() {
     todoNameRef.current.value = null;
   }
 
+  function clearTodo() {
+    console.log(todos);
+
+    const filterTodos = todos.filter((todo) => todo.complete == false);
+
+    setTodos(filterTodos);
+  }
+
   return (
     <>
-      <RecipieList todos={todos} />
+      <RecipieList todos={todos} setTodos={setTodos} />
       <input ref={todoNameRef} type="text"></input>
       <button onClick={handleAddTodo}>Add Tasks</button>
-      <button>Clear Tasks</button>
+      <button onClick={clearTodo}>Clear Tasks</button>
       <div>Tasks Left:</div>
     </>
   );
