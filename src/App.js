@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import RecipieList from "./RecipieList";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css";
 
 const LOCAL_STORAGE_KEY = "todoApp.todos";
