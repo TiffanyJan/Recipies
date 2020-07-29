@@ -1,57 +1,46 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef,  } from "react";
 import RecipieList from "./RecipieList";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Navbar, Nav} from 'react-bootstrap'
-
 import "./App.css";
 
-const LOCAL_STORAGE_KEY = "todoApp.todos";
 
 function App() {
   const [todos, setTodos] = useState([]);
   const todoNameRef = useRef();
 
-  useEffect(() => {
-    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(todos));
-  }, [todos]);
+  const recipies = [
+    { title: 'The Shawshank Redemption', year: 1994 },
+    { title: 'The Godfather', year: 1972 },
+    { title: 'The Godfather: Part II', year: 1974 },
+    { title: 'The Dark Knight', year: 2008 },
+    { title: '12 Angry Men', year: 1957 },
+    { title: "Schindler's List", year: 1993 },
+    { title: 'Pulp Fiction', year: 1994 },
+    { title: 'The Lord of the Rings: The Return of the King', year: 2003 },
+    { title: 'The Good, the Bad and the Ugly', year: 1966 },
+    { title: 'Fight Club', year: 1999 },
+    { title: 'The Lord of the Rings: The Fellowship of the Ring', year: 2001 },
+    { title: 'Star Wars: Episode V - The Empire Strikes Back', year: 1980 },
+    { title: 'Forrest Gump', year: 1994 },
+    { title: 'Inception', year: 2010 }
+  ]
+  
 
-  function handleAddTodo(e) {
-    const name = todoNameRef.current.value;
-    setTodos((prevTodos) => {
-      return [
-        ...prevTodos,
-        { id: todos.length + 1, name: name, complete: false },
-      ];
-    });
-    if (name == "") return;
-    todoNameRef.current.value = null;
-  }
-
-  function clearTodo() {
-    console.log(todos);
-
-    const filterTodos = todos.filter((todo) => todo.complete == false);
-
-    setTodos(filterTodos);
-  }
 
   return (
     <>
-     <Navbar bg="light" variant="light">
-    <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+     <Navbar className="color-nav" variant="light">
+    <Navbar.Brand href="#home">Recipies</Navbar.Brand>
     <Nav className="mr-auto">
       <Nav.Link href="#home">Home</Nav.Link>
-      <Nav.Link href="#features">Features</Nav.Link>
-      <Nav.Link href="#pricing">Pricing</Nav.Link>
+      <Nav.Link href="#features">New Recipies</Nav.Link>
+      <Nav.Link href="#pricing">Popular Recipies</Nav.Link>
     </Nav>
   </Navbar>
  
       <RecipieList todos={todos} setTodos={setTodos} />
-      <input ref={todoNameRef} type="text"></input>
-      <button onClick={handleAddTodo}>Add Tasks</button>
-      <button onClick={clearTodo}>Clear Tasks</button>
-      <div>Tasks Left:</div>
-
+      <input ref={todoNameRef} type="text" className = "inputBox" options = {recipies}></input>
     </>
   );
 }
