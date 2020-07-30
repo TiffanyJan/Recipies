@@ -4,6 +4,9 @@
   font-weight: "bold";
 }
 
-.col-sm{
-  
+.form-inline {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  margin-left: 374px;;
 }
