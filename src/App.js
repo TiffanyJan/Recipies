@@ -40,7 +40,11 @@ function App() {
   </Navbar>
  
       <RecipieList todos={todos} setTodos={setTodos} />
+      <div className="col-xs-1" align="center">
+      <div className="container">
       <input ref={todoNameRef} type="text" className = "inputBox" options = {recipies}></input>
+      </div>
+      </div>
     </>
   );
 }
