@@ -31,8 +31,8 @@ function App() {
         <Navbar.Brand href="#home">Recipies</Navbar.Brand>
         <Nav className="mr-auto">
           <Nav.Link href="#home">Home</Nav.Link>
-          <Nav.Link href="#features">New Recipies</Nav.Link>
-          <Nav.Link href="#pricing">Popular Recipies</Nav.Link>
+          <Nav.Link href="#new-recipies">New Recipies</Nav.Link>
+          <Nav.Link href="#popular-recipies">Popular Recipies</Nav.Link>
         </Nav>
       </Navbar>
 
