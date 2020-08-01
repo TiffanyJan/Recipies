@@ -30,19 +30,26 @@ function App() {
         </Nav>
       </Navbar>
 
+<div className = "heading">
+<h1>Popular Recipies</h1>
+</div>
+     
       <div className="row mt-5" align="center">
         {poplularRecipies.map((recipies) => (
-          <div key = {recipies.name}>
-            {recipies.name}
+          <div key={recipies.name} style={{ margin: "0 auto" }}>
             <img
               className="card-img-top"
               src={recipies.image}
               alt="Image"
               style={{ width: "10rem", margin: "0 auto" }}
             ></img>
+            <div className className="row mt-5" align="center">
+            {recipies.name}
+            </div>
           </div>
         ))}
       </div>
+      
 
       <RecipieList todos={todos} setTodos={setTodos} />
       <div className="row mt-5" align="center"></div>
