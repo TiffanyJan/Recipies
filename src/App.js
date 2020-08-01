@@ -13,10 +13,27 @@ function App() {
   const todoNameRef = useRef();
 
   const [poplularRecipies, setPopularRecipies] = useState([
-    { name: "Pasta Bake", image: pastaImg },
-    { name: "Rosemary One Pan Chicken Skillet", image: chickenImg },
-    { name: "Vegetable Bake", image: vegImg },
-    { name: "Parmesan Fish Crust Bake", image: fishImg },
+    {
+      name: "Caponata Pasta",
+      image: pastaImg,
+      link: "https://www.bbcgoodfood.com/recipes/caponata-pasta",
+    },
+    {
+      name: "Crispy Chicken Thighs",
+      image: chickenImg,
+      link:
+        "https://www.countryliving.com/food-drinks/a28942039/crispy-chicken-thighs-with-garlic-and-rosemary-recipe/",
+    },
+    {
+      name: "Aloo Gobi Tray Bake",
+      image: vegImg,
+      link: "https://realfood.tesco.com/recipes/aloo-gobi-traybake.html",
+    },
+    {
+      name: "Parmesan Fish Crust Bake",
+      image: fishImg,
+      link: "https://www.myrecipes.com/recipe/parmesan-crusted-baked-fish",
+    },
   ]);
 
   return (
@@ -33,17 +50,20 @@ function App() {
       <div className="heading">
         <h1>Popular Recipies of The Week</h1>
       </div>
-      <div className="row mt-2" >
+      <div className="row mt-2">
         {poplularRecipies.map((recipies) => (
           <div key={recipies.name} style={{ margin: "0 auto" }}>
-            <div className="row mt-2" >{recipies.name}</div>
+            <div className="row mt-2">{recipies.name}</div>
+
             <div className="row mt-2">
-            <img
-              className="card-img-top"
-              src={recipies.image}
-              alt="Image"
-              style={{ width: "15rem", margin: "0 auto" }}
-            ></img>
+              <a href={recipies.link}>
+                <img
+                  className="card-img-top"
+                  src={recipies.image}
+                  alt="Image"
+                  style={{ width: "15rem", margin: "0 auto" }}
+                ></img>
+              </a>
             </div>
           </div>
         ))}
