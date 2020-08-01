@@ -40,12 +40,10 @@ function App() {
       <div className="row mt-5" align="center"></div>
       <div className="container" >
         <div className="row mt-3">
-          <div className="col-sm">
             <Form inline className="text-center">
-              <FormControl type="text" placeholder="Search" />
+              <FormControl type="text" placeholder="Search" style={{width: '650px'}} />
               <Button variant="outline-success">Search</Button>
             </Form>
-          </div>
         </div>
       </div>
     </>
