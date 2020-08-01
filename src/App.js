@@ -13,10 +13,10 @@ function App() {
   const todoNameRef = useRef();
 
   const [poplularRecipies, setPopularRecipies] = useState([
-    { name: "pasta", image: pastaImg },
-    { name: "chicken", image: chickenImg },
-    { name: "vegetable", image: vegImg },
-    { name: "fish", image: fishImg },
+    { name: "Pasta Bake", image: pastaImg },
+    { name: "Rosemary One Pan Chicken Skillet", image: chickenImg },
+    { name: "Vegetable Bake", image: vegImg },
+    { name: "Parmesan Fish Crust Bake", image: fishImg },
   ]);
 
   return (
@@ -30,29 +30,27 @@ function App() {
         </Nav>
       </Navbar>
 
-<div className = "heading">
-<h1>Popular Recipies</h1>
-</div>
-     
-      <div className="row mt-5" align="center">
+      <div className="heading">
+        <h1>Popular Recipies of The Week</h1>
+      </div>
+      <div className="row mt-2" >
         {poplularRecipies.map((recipies) => (
           <div key={recipies.name} style={{ margin: "0 auto" }}>
+            <div className="row mt-2" >{recipies.name}</div>
+            <div className="row mt-2">
             <img
               className="card-img-top"
               src={recipies.image}
               alt="Image"
-              style={{ width: "10rem", margin: "0 auto" }}
+              style={{ width: "15rem", margin: "0 auto" }}
             ></img>
-            <div className className="row mt-5" align="center">
-            {recipies.name}
             </div>
           </div>
         ))}
       </div>
-      
 
       <RecipieList todos={todos} setTodos={setTodos} />
-      <div className="row mt-5" align="center"></div>
+      <div className="row mt-2" align="center"></div>
       <div className="container">
         <div className="row mt-3">
           <Form inline className="text-center">

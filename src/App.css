@@ -22,3 +22,7 @@
   text-align: center;
 }
 
+.mt-2, .my-2 {
+  justify-content: center;
+  margin-top: .5rem!important;
+}
