@@ -32,8 +32,8 @@ function App() {
 
       <div className="row mt-5" align="center">
         {poplularRecipies.map((recipies) => (
-          <div>
-          {recipies.name}
+          <div key = {recipies.name}>
+            {recipies.name}
             <img
               className="card-img-top"
               src={recipies.image}
