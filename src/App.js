@@ -3,27 +3,21 @@ import RecipieList from "./RecipieList";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Navbar, Nav, Form, FormControl, Button } from "react-bootstrap";
 import "./App.css";
+import pastaImg from "./caponata-pasta_1.jpg";
+import chickenImg from "./chicken-thighs.png";
+import vegImg from "./veg-bake.jpg";
+import fishImg from "./fish.jpeg";
 
 function App() {
   const [todos, setTodos] = useState([]);
   const todoNameRef = useRef();
 
-  const recipies = [
-    { title: "The Shawshank Redemption", year: 1994 },
-    { title: "The Godfather", year: 1972 },
-    { title: "The Godfather: Part II", year: 1974 },
-    { title: "The Dark Knight", year: 2008 },
-    { title: "12 Angry Men", year: 1957 },
-    { title: "Schindler's List", year: 1993 },
-    { title: "Pulp Fiction", year: 1994 },
-    { title: "The Lord of the Rings: The Return of the King", year: 2003 },
-    { title: "The Good, the Bad and the Ugly", year: 1966 },
-    { title: "Fight Club", year: 1999 },
-    { title: "The Lord of the Rings: The Fellowship of the Ring", year: 2001 },
-    { title: "Star Wars: Episode V - The Empire Strikes Back", year: 1980 },
-    { title: "Forrest Gump", year: 1994 },
-    { title: "Inception", year: 2010 },
-  ];
+  const [poplularRecipies, setPopularRecipies] = useState([
+    { name: "pasta", image: pastaImg },
+    { name: "chicken", image: chickenImg },
+    { name: "vegetable", image: vegImg },
+    { name: "fish", image: fishImg },
+  ]);
 
   return (
     <>
@@ -36,14 +30,32 @@ function App() {
         </Nav>
       </Navbar>
 
+      <div className="row mt-5" align="center">
+        {poplularRecipies.map((recipies) => (
+          <div>
+          {recipies.name}
+            <img
+              className="card-img-top"
+              src={recipies.image}
+              alt="Image"
+              style={{ width: "10rem", margin: "0 auto" }}
+            ></img>
+          </div>
+        ))}
+      </div>
+
       <RecipieList todos={todos} setTodos={setTodos} />
       <div className="row mt-5" align="center"></div>
-      <div className="container" >
+      <div className="container">
         <div className="row mt-3">
-            <Form inline className="text-center">
-              <FormControl type="text" placeholder="Search" style={{width: '650px'}} />
-              <Button variant="outline-success">Search</Button>
-            </Form>
+          <Form inline className="text-center">
+            <FormControl
+              type="text"
+              placeholder="Search"
+              style={{ width: "650px" }}
+            />
+            <Button variant="outline-success">Search</Button>
+          </Form>
         </div>
       </div>
     </>
