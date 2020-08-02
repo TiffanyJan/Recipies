@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 import RecipieList from "./RecipieList";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Navbar, Nav, Form, FormControl, Button } from "react-bootstrap";
+import { Navbar, Nav, Form, FormControl, Button,Row } from "react-bootstrap";
 import "./App.css";
 import pastaImg from "./caponata-pasta_1.jpg";
 import chickenImg from "./chicken-thighs.png";
@@ -85,15 +85,11 @@ function App() {
         </div>
       </div>
       <div className="container">
-        <div className="row mt-3">
-          <Form inline className="text-center">
-            <FormControl
-              type="text"
-              placeholder="Search"
-              style={{ width: "650px" }}
-            />
-          </Form>
+      <Row className="justify-content-md-center">
+        <div className="col-xs-1" align="center">
+        <div className = "box"></div>
         </div>
+        </Row>
       </div>
     </>
   );
