@@ -7,6 +7,7 @@ import pastaImg from "./caponata-pasta_1.jpg";
 import chickenImg from "./chicken-thighs.png";
 import vegImg from "./veg-bake.jpg";
 import fishImg from "./fish.jpeg";
+import Suggestions from "./Suggestions";
 
 function App() {
   const [todos, setTodos] = useState([]);
@@ -92,11 +93,12 @@ function App() {
           </Form>
         </div>
       </div>
-      <div className="container">
+      <Suggestions suggestions = {suggestions}/>
+      {/* <div className="container">
         <Row className="justify-content-lg-center">
         {suggestions.map((suggestion)=> <div className ="box">{suggestion}</div>)}
         </Row>
-      </div>
+      </div> */}
     </>
   );
 }
