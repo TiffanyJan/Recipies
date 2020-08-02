@@ -59,8 +59,11 @@
   font-family: "Courier New";
 }
 
-
 .justify-content-lg-center {
   justify-content: center;
   padding-right: 95px;
+}
+
+.hide{
+  opacity: 0;
 }

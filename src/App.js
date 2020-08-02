@@ -46,6 +46,8 @@ function App() {
     "Creamy courgette lasagne",
   ]);
 
+  const[showSuggestions, setShowSuggestions] = useState(false)
+
   return (
     <>
       <Navbar className="color-nav" variant="light">
@@ -93,12 +95,7 @@ function App() {
           </Form>
         </div>
       </div>
-      <Suggestions suggestions = {suggestions}/>
-      {/* <div className="container">
-        <Row className="justify-content-lg-center">
-        {suggestions.map((suggestion)=> <div className ="box">{suggestion}</div>)}
-        </Row>
-      </div> */}
+      <Suggestions suggestions = {suggestions} showSuggestions = {showSuggestions}/>
     </>
   );
 }
