@@ -85,10 +85,10 @@ function App() {
         </div>
       </div>
       <div className="container">
-      <Row className="justify-content-md-center">
-        <div className="col-xs-1" align="center">
+      <Row className="justify-content-lg-center">
+     
         <div className = "box"></div>
-        </div>
+     
         </Row>
       </div>
     </>

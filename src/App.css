@@ -34,15 +34,17 @@
 
 .box {
   background-color: rgb(255, 255, 255);
+  border-radius: .25rem;
   border: 1px solid #ced4da;
   margin: 20px;
   height: calc(1.5em + 0.75rem + 2px);
-  padding: 0.375rem 0.75rem;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5;
   color: #495057;
-  width: 746px;
-  justify-content: center;
+  width: 647px;
   margin-top: 0.01rem !important;
+}
+
+
+.justify-content-lg-center {
+    justify-content: center;
+    padding-right: 95px;
 }
