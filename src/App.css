@@ -38,13 +38,27 @@
   border-radius: 0.25rem;
   border: 1px solid #ced4da;
   margin: -2px;
-  height: calc(1.5em + 0.75rem + 2px);
+  height: 100%;
   color: #495057;
   width: 647px;
   margin-top: 0.01rem !important;
   text-align: center;
   font-family: "Courier New";
 }
+
+.box:hover {
+  background-color: #f4511e;
+  border-radius: 0.25rem;
+  border: 1px solid #ced4da;
+  margin: -2px;
+  height: 100%;
+  color: white;
+  width: 647px;
+  margin-top: 0.01rem !important;
+  text-align: center;
+  font-family: "Courier New";
+}
+
 
 .justify-content-lg-center {
   justify-content: center;
