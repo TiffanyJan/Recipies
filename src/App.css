@@ -14,6 +14,7 @@
   display: inline-block;
   vertical-align: middle;
   width: 100%;
+  font-family: "Courier New";
 }
 
 .heading {
@@ -36,11 +37,13 @@
   background-color: rgb(255, 255, 255);
   border-radius: 0.25rem;
   border: 1px solid #ced4da;
-  margin: 20px;
+  margin: -2px;
   height: calc(1.5em + 0.75rem + 2px);
   color: #495057;
   width: 647px;
   margin-top: 0.01rem !important;
+  text-align: center;
+  font-family: "Courier New";
 }
 
 .justify-content-lg-center {
