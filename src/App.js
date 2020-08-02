@@ -48,6 +48,10 @@ function App() {
 
   const[showSuggestions, setShowSuggestions] = useState(false)
 
+  function userInput(){
+    console.log("madusha")
+  }
+
   return (
     <>
       <Navbar className="color-nav" variant="light">
@@ -87,6 +91,7 @@ function App() {
         <div className="row mt-3">
           <Form inline className="text-center">
             <FormControl
+              onChange= {userInput}
               type="text"
               placeholder="Search"
               style={{ width: "650px" }}

@@ -15,7 +15,7 @@ export default function Suggestions(props) {
         <div className = {showSuggestions()}>
         <div className="container">
         <Row className="justify-content-lg-center">
-        {props.suggestions.map((suggestion)=> <div className ="box">{suggestion}</div>)}
+        {props.suggestions.map((suggestion)=> <div key={suggestion} className="box">{suggestion}</div>)}
         </Row>
       </div>
       </div>
