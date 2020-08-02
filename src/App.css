@@ -22,7 +22,7 @@
   text-align: center;
 }
 
-.row .mt-2{
+.row .mt-2 {
   font-family: "Courier New";
 }
 
@@ -34,7 +34,7 @@
 
 .box {
   background-color: rgb(255, 255, 255);
-  border-radius: .25rem;
+  border-radius: 0.25rem;
   border: 1px solid #ced4da;
   margin: 20px;
   height: calc(1.5em + 0.75rem + 2px);
@@ -43,8 +43,7 @@
   margin-top: 0.01rem !important;
 }
 
-
 .justify-content-lg-center {
-    justify-content: center;
-    padding-right: 95px;
+  justify-content: center;
+  padding-right: 95px;
 }

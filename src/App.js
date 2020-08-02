@@ -1,19 +1,17 @@
 import React, { useState, useRef } from "react";
 import RecipieList from "./RecipieList";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Navbar, Nav, Form, FormControl, Button,Row } from "react-bootstrap";
+import { Navbar, Nav, Form, FormControl, Button, Row } from "react-bootstrap";
 import "./App.css";
 import pastaImg from "./caponata-pasta_1.jpg";
 import chickenImg from "./chicken-thighs.png";
 import vegImg from "./veg-bake.jpg";
 import fishImg from "./fish.jpeg";
 
-
 function App() {
   const [todos, setTodos] = useState([]);
-  const todoNameRef = useRef();
 
-  const [poplularRecipies, setPopularRecipies] = useState([
+  const [popularRecipies, setPopularRecipies] = useState([
     {
       name: "Caponata Pasta",
       image: pastaImg,
@@ -37,6 +35,16 @@ function App() {
     },
   ]);
 
+  const [suggestions, setSuggestions] = useState([
+    "Chilli con carne recipe",
+    "Spiced carrot & lentil soup",
+    "Chicken & Chorizo Jambalaya",
+    "Summer-in-winter chicken",
+    "Spicy root & lentil casserole",
+    "Chicken biryani",
+    "Creamy courgette lasagne",
+  ]);
+
   return (
     <>
       <Navbar className="color-nav" variant="light">
@@ -52,7 +60,7 @@ function App() {
         <h1>Popular Recipies of The Week</h1>
       </div>
       <div className="row mt-2">
-        {poplularRecipies.map((recipies) => (
+        {popularRecipies.map((recipies) => (
           <div key={recipies.name} style={{ margin: "0 auto" }}>
             <div className="row mt-2">{recipies.name}</div>
 
@@ -85,10 +93,8 @@ function App() {
         </div>
       </div>
       <div className="container">
-      <Row className="justify-content-lg-center">
-     
-        <div className = "box"></div>
-     
+        <Row className="justify-content-lg-center">
+          <div className="box">{suggestions}</div>
         </Row>
       </div>
     </>
