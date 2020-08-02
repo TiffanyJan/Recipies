@@ -49,7 +49,7 @@ function App() {
   const[showSuggestions, setShowSuggestions] = useState(false)
 
   function userInput(){
-    console.log("madusha")
+    setShowSuggestions(true)
   }
 
   return (
