@@ -8,6 +8,7 @@ import chickenImg from "./chicken-thighs.png";
 import vegImg from "./veg-bake.jpg";
 import fishImg from "./fish.jpeg";
 
+
 function App() {
   const [todos, setTodos] = useState([]);
   const todoNameRef = useRef();
@@ -80,6 +81,17 @@ function App() {
               style={{ width: "650px" }}
             />
             <Button variant="outline-success">Search</Button>
+          </Form>
+        </div>
+      </div>
+      <div className="container">
+        <div className="row mt-3">
+          <Form inline className="text-center">
+            <FormControl
+              type="text"
+              placeholder="Search"
+              style={{ width: "650px" }}
+            />
           </Form>
         </div>
       </div>
