@@ -94,7 +94,7 @@ function App() {
       </div>
       <div className="container">
         <Row className="justify-content-lg-center">
-          <div className="box">{suggestions}</div>
+          {suggestions.map((suggestion)=> <div className ="box">{suggestion}</div>)}
         </Row>
       </div>
     </>
