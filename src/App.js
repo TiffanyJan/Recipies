@@ -48,9 +48,13 @@ function App() {
 
   const[showSuggestions, setShowSuggestions] = useState(false)
 
-  function userInput(){
-    setShowSuggestions(true)
+
+  function userInput(event){
+   console.log(event.target.value) 
+   setShowSuggestions(true)
   }
+
+
 
   return (
     <>
@@ -91,7 +95,7 @@ function App() {
         <div className="row mt-3">
           <Form inline className="text-center">
             <FormControl
-              onChange= {userInput}
+              onChange={userInput}
               type="text"
               placeholder="Search"
               style={{ width: "650px" }}
