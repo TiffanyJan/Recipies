@@ -50,10 +50,13 @@ function App() {
 
 
   function userInput(event){
- if (event.target.value.length >= 3)
-   setShowSuggestions(true)
+ if (event.target.value.length >= 3){
+   setShowSuggestions(true);
   }
-  //console.log(event.target.value) 
+  else if (event.target.value.length <= 3){
+    setShowSuggestions(false)}
+};
+
 
   return (
     <>
