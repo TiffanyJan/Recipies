@@ -44,6 +44,12 @@ function App() {
     "Spicy root & lentil casserole",
     "Chicken biryani",
     "Creamy courgette lasagne",
+    "Apple and Blueberry Pancake Stack",
+    "Beef and Brocolli stir fry",
+    "Chicken Satay Sticks",
+    "Danish Potato Cakes",
+    "Easy Cheesy Potato Bake"
+
   ]);
 
   const[showSuggestions, setShowSuggestions] = useState(false)
