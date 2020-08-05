@@ -49,15 +49,20 @@ function App() {
     "Chicken Satay Sticks",
     "Danish Potato Cakes",
     "Easy Cheesy Potato Bake"
-
   ]);
 
+  
   const[showSuggestions, setShowSuggestions] = useState(false)
 
 
   function userInput(event){
- if (event.target.value.length >= 3){
+   let text = event.target.value
+   
+   if (text.length >= 3) {
    setShowSuggestions(true);
+
+   let filteredSuggestion = suggestions.filter( suggestion => suggestion.toLowerCase().includes(text.toLowerCase()))
+   setSuggestions(filteredSuggestion)
   }
   else if (event.target.value.length <= 3){
     setShowSuggestions(false)}
