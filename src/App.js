@@ -12,19 +12,10 @@ import Suggestions from "./Suggestions";
 function App() {
   const [todos, setTodos] = useState([]);
 
-  // fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_API_KEY}&number=5&query=pas`)
-  //   .then(result => result.json())
-  //   .then(data => console.log(data))
-
   const [popularRecipies, setPopularRecipies] = useState([
     {
-
-      //"title": "Pasta",
-     // "image": "https://spoonacular.com/recipeImages/749013-312x231.jpeg",
-      //"imageType": "jpeg"
       title: "Caponata Pasta",
       image: pastaImg,
-      imageType:"jpeg",
       link: "https://www.bbcgoodfood.com/recipes/caponata-pasta",
     },
     {
@@ -45,38 +36,28 @@ function App() {
     },
   ]);
 
-  const [suggestions, setSuggestions] = useState([
-    "Chilli con carne recipe",
-    "Spiced carrot & lentil soup",
-    "Chicken & Chorizo Jambalaya",
-    "Summer-in-winter chicken",
-    "Spicy root & lentil casserole",
-    "Chicken biryani",
-    "Creamy courgette lasagne",
-    "Apple and Blueberry Pancake Stack",
-    "Beef and Brocolli stir fry",
-    "Chicken Satay Sticks",
-    "Danish Potato Cakes",
-    "Easy Cheesy Potato Bake"
-  ]);
+  const [suggestions, setSuggestions] = useState([]);
 
-  
-  const[showSuggestions, setShowSuggestions] = useState(false)
+  const [showSuggestions, setShowSuggestions] = useState(false);
 
+  function userInput(event) {
+    let text = event.target.value;
 
-  function userInput(event){
-   let text = event.target.value
-   
-   if (text.length >= 3) {
-   setShowSuggestions(true);
+    if (text.length >= 3) {
+        fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_API_KEY}&number=5&query=${text}`)
+       .then(result => result.json())
 
-   let filteredSuggestion = suggestions.filter( suggestion => suggestion.toLowerCase().includes(text.toLowerCase()))
-   setSuggestions(filteredSuggestion)
+       .then(data => {
+       console.log(data.results)
+       setSuggestions(data.results)
+      
+      setShowSuggestions(true);
+    })
+      
+    } else if (event.target.value.length <= 3) {
+      setShowSuggestions(false);
+    }
   }
-  else if (event.target.value.length <= 3){
-    setShowSuggestions(false)}
-};
-
 
   return (
     <>
@@ -126,7 +107,10 @@ function App() {
           </Form>
         </div>
       </div>
-      <Suggestions suggestions = {suggestions} showSuggestions = {showSuggestions}/>
+      <Suggestions
+        suggestions={suggestions}
+        showSuggestions={showSuggestions}
+      />
     </>
   );
 }

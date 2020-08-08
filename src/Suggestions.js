@@ -3,6 +3,8 @@ import {Row} from "react-bootstrap";
 
 export default function Suggestions(props) {
 
+    console.log(props)
+
     function showSuggestions() {
         if (props.showSuggestions == true) {
           return "container";
@@ -15,7 +17,7 @@ export default function Suggestions(props) {
         <div className = {showSuggestions()}>
         <div className="container">
         <Row className="justify-content-lg-center">
-        {props.suggestions.map((suggestion)=> <div key={suggestion} className="box">{suggestion}</div>)}
+        {props.suggestions.map((suggestion)=> <div key={suggestion.id} className="box">{suggestion.title}</div>)} 
         </Row>
       </div>
       </div>
