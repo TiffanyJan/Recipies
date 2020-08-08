@@ -18,23 +18,28 @@ function App() {
 
   const [popularRecipies, setPopularRecipies] = useState([
     {
-      name: "Caponata Pasta",
+
+      //"title": "Pasta",
+     // "image": "https://spoonacular.com/recipeImages/749013-312x231.jpeg",
+      //"imageType": "jpeg"
+      title: "Caponata Pasta",
       image: pastaImg,
+      imageType:"jpeg",
       link: "https://www.bbcgoodfood.com/recipes/caponata-pasta",
     },
     {
-      name: "Crispy Chicken Thighs",
+      title: "Crispy Chicken Thighs",
       image: chickenImg,
       link:
         "https://www.countryliving.com/food-drinks/a28942039/crispy-chicken-thighs-with-garlic-and-rosemary-recipe/",
     },
     {
-      name: "Aloo Gobi Tray Bake",
+      title: "Aloo Gobi Tray Bake",
       image: vegImg,
       link: "https://realfood.tesco.com/recipes/aloo-gobi-traybake.html",
     },
     {
-      name: "Parmesan Fish Crust Bake",
+      title: "Parmesan Fish Crust Bake",
       image: fishImg,
       link: "https://www.myrecipes.com/recipe/parmesan-crusted-baked-fish",
     },
@@ -89,8 +94,8 @@ function App() {
       </div>
       <div className="row mt-2">
         {popularRecipies.map((recipies) => (
-          <div key={recipies.name} style={{ margin: "0 auto" }}>
-            <div className="row mt-2">{recipies.name}</div>
+          <div key={recipies.title} style={{ margin: "0 auto" }}>
+            <div className="row mt-2">{recipies.title}</div>
 
             <div className="row mt-2">
               <a href={recipies.link}>
