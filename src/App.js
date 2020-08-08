@@ -12,6 +12,10 @@ import Suggestions from "./Suggestions";
 function App() {
   const [todos, setTodos] = useState([]);
 
+  // fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_API_KEY}&number=5&query=pas`)
+  //   .then(result => result.json())
+  //   .then(data => console.log(data))
+
   const [popularRecipies, setPopularRecipies] = useState([
     {
       name: "Caponata Pasta",
