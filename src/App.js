@@ -50,7 +50,7 @@ function App() {
         .then((result) => result.json())
 
         .then((data) => {
-          console.log(data.results);
+          
 
           const uniqueArray = data.results.filter(
             (result, index, self) =>
@@ -59,7 +59,6 @@ function App() {
               ) === index
           );
 
-          console.log(uniqueArray);
 
           setSuggestions(uniqueArray);
 
@@ -120,6 +119,7 @@ function App() {
       </div>
       <Suggestions
         suggestions={suggestions}
+       
         showSuggestions={showSuggestions}
       />
     </>
