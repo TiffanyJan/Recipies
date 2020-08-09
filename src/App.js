@@ -44,16 +44,27 @@ function App() {
     let text = event.target.value;
 
     if (text.length >= 3) {
-        fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_API_KEY}&number=5&query=${text}`)
-       .then(result => result.json())
+      fetch(
+        `https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_API_KEY}&number=20&query=${text}`
+      )
+        .then((result) => result.json())
 
-       .then(data => {
-       console.log(data.results)
-       setSuggestions(data.results)
-      
-      setShowSuggestions(true);
-    })
-      
+        .then((data) => {
+          console.log(data.results);
+
+          const uniqueArray = data.results.filter(
+            (result, index, self) =>
+              self.findIndex(
+                (r) => r.title === result.title
+              ) === index
+          );
+
+          console.log(uniqueArray);
+
+          setSuggestions(uniqueArray);
+
+          setShowSuggestions(true);
+        });
     } else if (event.target.value.length <= 3) {
       setShowSuggestions(false);
     }
