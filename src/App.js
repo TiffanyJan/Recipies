@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useCallback } from "react";
 import RecipieList from "./RecipieList";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Navbar, Nav, Form, FormControl, Button, Row } from "react-bootstrap";
@@ -40,9 +40,22 @@ function App() {
 
   const [showSuggestions, setShowSuggestions] = useState(false);
 
-  function userInput(event) {
-    let text = event.target.value;
+  function debounce(func, wait) {
+    let timeout;
+    return function (...args) {
+      const context = this;
+      if (timeout) clearTimeout(timeout);
+      timeout = setTimeout(() => {
+        timeout = null;
+        func.apply(context, args);
+      }, wait);
+    };
+  }
 
+  const debounceOnChange = (debounce(userInput, 1000), []);
+
+  function userInput(event) {
+    let text = event;
     if (text.length >= 3) {
       fetch(
         `https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_API_KEY}&number=20&query=${text}`
@@ -51,140 +64,11 @@ function App() {
         .then((data) => {
           const uniqueArray = data.results.filter(
             (result, index, self) =>
-              self.findIndex(
-                (r) => r.title === result.title
-              ) === index
+              self.findIndex((r) => r.title === result.title) === index
           );
           setSuggestions(uniqueArray);
           setShowSuggestions(true);
         });
-
-    //   setSuggestions(
-    //     [
-    //         {
-    //             "id": 296687,
-    //             "title": "Chicken",
-    //             "image": "https://spoonacular.com/recipeImages/296687-312x231.jpeg",
-    //             "imageType": "jpeg"
-    //         },
-    //         {
-    //             "id": 379523,
-    //             "title": "Chicken",
-    //             "image": "https://spoonacular.com/recipeImages/379523-312x231.jpeg",
-    //             "imageType": "jpeg"
-    //         },
-    //         {
-    //             "id": 1224783,
-    //             "title": "Chicken 65",
-    //             "image": "https://spoonacular.com/recipeImages/1224783-312x231.jpg",
-    //             "imageType": "jpg"
-    //         },
-    //         {
-    //             "id": 637876,
-    //             "title": "Chicken 65",
-    //             "image": "https://spoonacular.com/recipeImages/637876-312x231.jpg",
-    //             "imageType": "jpg"
-    //         },
-    //         {
-    //             "id": 737543,
-    //             "title": "Chicken Pie",
-    //             "image": "https://spoonacular.com/recipeImages/737543-312x231.jpeg",
-    //             "imageType": "jpeg"
-    //         },
-    //         {
-    //             "id": 74194,
-    //             "title": "Chicken Olé",
-    //             "image": "https://spoonacular.com/recipeImages/74194-312x231.jpg",
-    //             "imageType": "jpg"
-    //         },
-    //         {
-    //             "id": 42569,
-    //             "title": "Chicken Bbq",
-    //             "image": "https://spoonacular.com/recipeImages/42569-312x231.jpg",
-    //             "imageType": "jpg"
-    //         },
-    //         {
-    //             "id": 737537,
-    //             "title": "Chicken Pho",
-    //             "image": "https://spoonacular.com/recipeImages/737537-312x231.jpeg",
-    //             "imageType": "jpeg"
-    //         },
-    //         {
-    //             "id": 279390,
-    //             "title": "Chicken Mac",
-    //             "image": "https://spoonacular.com/recipeImages/279390-312x231.jpg",
-    //             "imageType": "jpg"
-    //         },
-    //         {
-    //             "id": 496844,
-    //             "title": "Chicken Pho",
-    //             "image": "https://spoonacular.com/recipeImages/496844-312x231.jpg",
-    //             "imageType": "jpg"
-    //         },
-    //         {
-    //             "id": 583898,
-    //             "title": "Chicken Pho",
-    //             "image": "https://spoonacular.com/recipeImages/583898-312x231.jpg",
-    //             "imageType": "jpg"
-    //         },
-    //         {
-    //             "id": 83890,
-    //             "title": "Chicken Blt",
-    //             "image": "https://spoonacular.com/recipeImages/83890-312x231.jpg",
-    //             "imageType": "jpg"
-    //         },
-    //         {
-    //             "id": 311972,
-    //             "title": "Chicken Bog",
-    //             "image": "https://spoonacular.com/recipeImages/311972-312x231.jpeg",
-    //             "imageType": "jpeg"
-    //         },
-    //         {
-    //             "id": 499139,
-    //             "title": "Chicken Kiev",
-    //             "image": "https://spoonacular.com/recipeImages/499139-312x231.jpg",
-    //             "imageType": "jpg"
-    //         },
-    //         {
-    //             "id": 431053,
-    //             "title": "Chicken Mole",
-    //             "image": "https://spoonacular.com/recipeImages/431053-312x231.jpg",
-    //             "imageType": "jpg"
-    //         },
-    //         {
-    //             "id": 291352,
-    //             "title": "Chicken Mole",
-    //             "image": "https://spoonacular.com/recipeImages/291352-312x231.jpeg",
-    //             "imageType": "jpeg"
-    //         },
-    //         {
-    //             "id": 197934,
-    //             "title": "Chicken Mole",
-    //             "image": "https://spoonacular.com/recipeImages/197934-312x231.jpg",
-    //             "imageType": "jpg"
-    //         },
-    //         {
-    //             "id": 1433377,
-    //             "title": "Chicken Gyro",
-    //             "image": "https://spoonacular.com/recipeImages/1433377-312x231.jpg",
-    //             "imageType": "jpg"
-    //         },
-    //         {
-    //             "id": 74302,
-    //             "title": "Chicken Kiev",
-    //             "image": "https://spoonacular.com/recipeImages/74302-312x231.jpg",
-    //             "imageType": "jpg"
-    //         },
-    //         {
-    //             "id": 716342,
-    //             "title": "Chicken Suya",
-    //             "image": "https://spoonacular.com/recipeImages/716342-312x231.jpg",
-    //             "imageType": "jpg"
-    //         }
-    //     ]
-    // )
-    //setShowSuggestions(true);
-
     } else if (event.target.value.length <= 3) {
       setShowSuggestions(false);
     }
@@ -229,7 +113,7 @@ function App() {
         <div className="row mt-3">
           <Form inline className="text-center">
             <FormControl
-              onChange={userInput}
+              onChange={(e) => debounceOnChange(e.target.value)}
               type="text"
               placeholder="Search"
               style={{ width: "650px" }}
@@ -240,7 +124,6 @@ function App() {
       </div>
       <Suggestions
         suggestions={suggestions}
-       
         showSuggestions={showSuggestions}
       />
     </>
