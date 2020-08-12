@@ -8,11 +8,12 @@ import chickenImg from "./chicken-thighs.png";
 import vegImg from "./veg-bake.jpg";
 import fishImg from "./fish.jpeg";
 import Suggestions from "./Suggestions";
-import { Router, Route, Switch, Redirect } from "react-router-dom";
+import { Router, Route, Switch } from "react-router-dom";
 import NewRecipiesPage from "./NewRecipiesPage";
 
 
 function App() {
+
   const [todos, setTodos] = useState([]);
 
   const [popularRecipies, setPopularRecipies] = useState([
@@ -78,6 +79,12 @@ function App() {
   }
 
   return (
+    <main>
+      
+    <Switch> 
+
+    <Route path='/NewRecipiesPage' component={NewRecipiesPage} />
+      
     <>
       <Navbar className="color-nav" variant="light">
         <Navbar.Brand href="#home">Recipies</Navbar.Brand>
@@ -130,6 +137,8 @@ function App() {
         showSuggestions={showSuggestions}
       />
     </>
+    </Switch>
+    </main>
   );
 }
 
