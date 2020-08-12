@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Navbar, Nav, Form, FormControl, Button, Row } from "react-bootstrap";
+import {  Form, FormControl, Button, Row } from "react-bootstrap";
 import "./App.css";
 import pastaImg from "./caponata-pasta_1.jpg";
 import chickenImg from "./chicken-thighs.png";
