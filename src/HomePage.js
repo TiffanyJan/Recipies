@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useCallback } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import {  Form, FormControl, Button, Row } from "react-bootstrap";
+import {  Form, FormControl, Button,} from "react-bootstrap";
 import "./App.css";
 import pastaImg from "./caponata-pasta_1.jpg";
 import chickenImg from "./chicken-thighs.png";
@@ -52,7 +52,7 @@ export default function HomePage() {
     };
   }
 
-  const debounceOnChange = (debounce(userInput, 1000), []);
+  const debounceOnChange = useCallback(debounce(userInput, 1000), []);
 
   function userInput(event) {
     let text = event;
