@@ -8,14 +8,15 @@ function App() {
   return (
     <>
       <Navbar className="color-nav" variant="light">
-        <Navbar.Brand href="#home">Recipies</Navbar.Brand>
+        <Navbar.Brand href="#home"> Recipies </Navbar.Brand>
         <Nav className="mr-auto">
-          <Nav.Link href="#home">Home</Nav.Link>
-          <Nav.Link href="#new-recipies">
-            {" "}
-            <Link to="/NewRecipiesPage">New Recipies</Link>{" "}
+          <Nav.Link>
+             <Link to="/"> Home </Link>
           </Nav.Link>
-          <Nav.Link href="#popular-recipies">Popular Recipies</Nav.Link>
+          <Nav.Link>
+            <Link to="/NewRecipiesPage"> New Recipies </Link>
+          </Nav.Link>
+          <Nav.Link> Popular Recipies </Nav.Link>
         </Nav>
       </Navbar>
       <main>

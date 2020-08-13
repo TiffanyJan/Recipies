@@ -6,7 +6,6 @@ import pastaImg from "./caponata-pasta_1.jpg";
 import chickenImg from "./chicken-thighs.png";
 import vegImg from "./veg-bake.jpg";
 import fishImg from "./fish.jpeg";
-import { Link } from "react-router-dom";
 import Suggestions from "./Suggestions";
 import RecipieList from "./RecipieList";
 
@@ -117,6 +116,8 @@ export default function HomePage() {
         suggestions={suggestions}
         showSuggestions={showSuggestions}
       />
+
+      
     </>
   );
 }
