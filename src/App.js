@@ -3,6 +3,7 @@ import { Route, Switch, Link } from "react-router-dom";
 import { Navbar, Nav } from "react-bootstrap";
 import NewRecipiesPage from "./NewRecipiesPage";
 import HomePage from "./HomePage";
+import PopularRecipiesPage from "./PopularRecipiesPage";
 
 function App() {
   return (
@@ -16,12 +17,13 @@ function App() {
           <Nav.Link>
             <Link to="/NewRecipiesPage"> New Recipies </Link>
           </Nav.Link>
-          <Nav.Link> Popular Recipies </Nav.Link>
+          <Nav.Link> <Link to="/PopularRecipiesPage"> Popular Recipies </Link></Nav.Link>
         </Nav>
       </Navbar>
       <main>
         <Switch>
           <Route path="/NewRecipiesPage" component={NewRecipiesPage} />
+          <Route path="/PopularRecipiesPage" component={PopularRecipiesPage}/>
           <Route path="/" component={HomePage} />
         </Switch>
       </main>
