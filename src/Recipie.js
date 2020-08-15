@@ -5,8 +5,15 @@ export default function Recipie(props) {
    const showRecipe = (recipeDetails) => {
       if(recipeDetails) {
           console.log(recipeDetails)
-          return <img src={recipeDetails.image}></img>
-      }
+          return (
+              <>
+          <div>
+          <h1>{recipeDetails.title}</h1>
+          {recipeDetails.summary} 
+          <img src={recipeDetails.image}></img>
+          </div> 
+          </>
+          )}
       else {
           return  <h1>No recipe image</h1>
       }
