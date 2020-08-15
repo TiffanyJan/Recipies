@@ -1,5 +1,7 @@
 import React from "react";
 import { Row } from "react-bootstrap";
+import Recipie from "./Recipie";
+import { Route, Switch, Link } from "react-router-dom";
 
 export default function Suggestions(props) {
 
@@ -27,7 +29,9 @@ export default function Suggestions(props) {
     <div className={showSuggestions()}>
       <div className="container">
         <Row className="justify-content-lg-center">
+        <Route path="/Recipie" component={Recipie}/>
           {props.suggestions.map((suggestion) => (
+            <Link to="/Recipie"> Recipie
             <div
               key={suggestion.id}
               className="box"
@@ -35,6 +39,7 @@ export default function Suggestions(props) {
             >
               {suggestion.title}
             </div>
+            </Link>
           ))}
         </Row>
       </div>
