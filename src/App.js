@@ -7,7 +7,7 @@ import PopularRecipiesPage from "./PopularRecipiesPage";
 import Recipie from "./Recipie";
 
 function App() {
-  const [recipeDetails, setRecipeDetails] = useState({});
+  const [recipeDetails, setRecipeDetails] = useState();
 
   return (
     <>
