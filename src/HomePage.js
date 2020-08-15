@@ -9,7 +9,7 @@ import fishImg from "./fish.jpeg";
 import Suggestions from "./Suggestions";
 import RecipieList from "./RecipieList";
 
-export default function HomePage() {
+export default function HomePage(props) {
   const [todos, setTodos] = useState([]);
 
   const [popularRecipies, setPopularRecipies] = useState([
@@ -115,6 +115,7 @@ export default function HomePage() {
       <Suggestions
         suggestions={suggestions}
         showSuggestions={showSuggestions}
+        setRecipeDetails={props.setRecipeDetails}
       />
 
       

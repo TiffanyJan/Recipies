@@ -1,10 +1,9 @@
-import React from "react";
+import React, {useState} from "react";
 import { Row } from "react-bootstrap";
 import Recipie from "./Recipie";
-import { Route, Switch, Link } from "react-router-dom";
+import { Route, Switch, Link,  } from "react-router-dom";
 
 export default function Suggestions(props) {
-
 
   function getRecipieDetails(id){
     fetch(
@@ -12,8 +11,7 @@ export default function Suggestions(props) {
         )
         .then((response) => response.json())
           .then((data) => {
-               console.log(data.sourceUrl)
-            window.location = data.sourceUrl
+            props.setRecipeDetails(data)
           })
 }
 
@@ -29,9 +27,8 @@ export default function Suggestions(props) {
     <div className={showSuggestions()}>
       <div className="container">
         <Row className="justify-content-lg-center">
-        <Route path="/Recipie" component={Recipie}/>
           {props.suggestions.map((suggestion) => (
-            <Link to="/Recipie"> Recipie
+            <Link to="/Recipie"> 
             <div
               key={suggestion.id}
               className="box"
