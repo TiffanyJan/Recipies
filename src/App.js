@@ -4,6 +4,7 @@ import { Navbar, Nav } from "react-bootstrap";
 import NewRecipiesPage from "./NewRecipiesPage";
 import HomePage from "./HomePage";
 import PopularRecipiesPage from "./PopularRecipiesPage";
+import Recipie from "./Recipie";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Switch>
           <Route path="/NewRecipiesPage" component={NewRecipiesPage} />
           <Route path="/PopularRecipiesPage" component={PopularRecipiesPage}/>
+          <Route path="/Recipie" component={Recipie}/>
           <Route path="/" component={HomePage} />
         </Switch>
       </main>
