@@ -11,11 +11,17 @@ function App() {
   return (
     <>
       <Navbar className="color-nav" variant="light">
-        <Navbar.Brand href="#home"> Recipies </Navbar.Brand>
+        <Navbar.Brand href="#Recipies">  
+        <Nav.Link>
+            <Link to="/"> Recipies </Link>
+          </Nav.Link>
+        </Navbar.Brand>
+
         <Nav className="mr-auto">
           <Nav.Link>
             <Link to="/"> Home </Link>
           </Nav.Link>
+          
           <Nav.Link>
             <Link to="/NewRecipiesPage"> New Recipies </Link>
           </Nav.Link>
@@ -30,7 +36,6 @@ function App() {
               <Recipie recipeDetails={recipeDetails} />
             )}
           />
-
           <Route
             path="/"
             render={() => (
