@@ -15,6 +15,7 @@ export default function Recipie(props) {
       }
       else{
           return recipeDetails.sourceUrl
+
       }
   }
 
@@ -36,7 +37,7 @@ export default function Recipie(props) {
             </div>
             <div className="row mt-2">
               <div className="col-sm">
-                Instructions: {instructions(recipeDetails)}
+      Instructions: {<a href= {instructions(recipeDetails)}>{instructions(recipeDetails)}</a>}
               </div>
             </div>
           </div>
