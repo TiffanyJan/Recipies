@@ -3,7 +3,7 @@ import { Route, Switch, Link } from "react-router-dom";
 import { Navbar, Nav } from "react-bootstrap";
 import NewRecipiesPage from "./NewRecipiesPage";
 import HomePage from "./HomePage";
-import Recipie from "./Recipie";
+import Recipe from "./Recipe";
 
 function App() {
   const [recipeDetails, setRecipeDetails] = useState();
@@ -31,9 +31,9 @@ function App() {
         <Switch>
           <Route path="/NewRecipiesPage" component={NewRecipiesPage} />
           <Route
-            path="/Recipie"
+            path="/Recipe"
             render={() => (
-              <Recipie recipeDetails={recipeDetails} />
+              <Recipe recipeDetails={recipeDetails} />
             )}
           />
           <Route

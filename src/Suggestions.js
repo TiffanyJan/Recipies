@@ -1,10 +1,11 @@
-import React, {useState} from "react";
+import React from "react";
 import { Row } from "react-bootstrap";
-import Recipie from "./Recipie";
+import Recipe from "./Recipe";
 import { Route, Switch, Link,  } from "react-router-dom";
 
 export default function Suggestions(props) {
 
+  
   function getRecipieDetails(id){
     fetch(
           `https://api.spoonacular.com/recipes/${id}/information?apiKey=${process.env.REACT_APP_API_KEY}`
@@ -14,6 +15,7 @@ export default function Suggestions(props) {
             props.setRecipeDetails(data)
           })
 }
+
 
   function showSuggestions() {
     if (props.showSuggestions == true) {
@@ -28,7 +30,7 @@ export default function Suggestions(props) {
       <div className="container">
         <Row className="justify-content-lg-center">
           {props.suggestions.map((suggestion) => (
-            <Link to="/Recipie"> 
+            <Link to="/Recipe"> 
             <div
               key={suggestion.id}
               className="box"
