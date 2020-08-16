@@ -1,28 +1,27 @@
-import React from 'react'
+import React from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function Recipie(props) {
-
-   const showRecipe = (recipeDetails) => {
-      if(recipeDetails) {
-          console.log(recipeDetails)
-          return (
-              <>
+  const showRecipe = (recipeDetails) => {
+    if (recipeDetails) {
+      console.log(recipeDetails);
+      return (
+        <>
           <div>
-          <h1>{recipeDetails.title}</h1>
-          {recipeDetails.summary} 
-          <img src={recipeDetails.image}></img>
-          </div> 
-          </>
-          )}
-      else {
-          return  <h1>No recipe image</h1>
-      }
-   }
+            <div className="heading">
+              <h1>{recipeDetails.title}</h1>
+            </div>
+            {recipeDetails.summary}
+            <div className="row mt-2">
+              <img src={recipeDetails.image}></img>
+            </div>
+          </div>
+        </>
+      );
+    } else {
+      return <h1>No recipe image</h1>;
+    }
+  };
 
-
-    return (
-        <div>
-          {showRecipe(props.recipeDetails)}
-        </div>
-    )
+  return <div>{showRecipe(props.recipeDetails)}</div>;
 }
