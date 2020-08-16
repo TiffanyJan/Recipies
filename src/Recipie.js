@@ -14,7 +14,7 @@ export default function Recipie(props) {
           return recipeDetails.instructions
       }
       else{
-          return recipeDetails.sourceUrl
+          return <a href= {recipeDetails.sourceUrl}>{recipeDetails.sourceUrl}</a>
 
       }
   }
@@ -37,7 +37,7 @@ export default function Recipie(props) {
             </div>
             <div className="row mt-2">
               <div className="col-sm">
-      Instructions: {<a href= {instructions(recipeDetails)}>{instructions(recipeDetails)}</a>}
+      Instructions: {instructions(recipeDetails)}
               </div>
             </div>
           </div>
