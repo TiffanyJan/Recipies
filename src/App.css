@@ -31,8 +31,8 @@
   justify-content: center;
   margin-top: 0.5rem !important;
   background: bisque;
-  margin-left: 79px;
-  margin-right: 68px;
+  margin-right: 40px;
+  margin-left: 34px;
 }
 
 .mt-2,
@@ -81,7 +81,10 @@
 }
 
 body {
-  background-image: url("img_tree.gif");
+  background-image: url("light-peach-bokeh-light-abstract-background_73588-57.jpg");
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  height: 900%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
