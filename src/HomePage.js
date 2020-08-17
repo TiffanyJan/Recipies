@@ -89,7 +89,7 @@ export default function HomePage(props) {
                   className="card-img-top"
                   src={recipies.image}
                   alt="Image"
-                  style={{ width: "15rem", margin: "0 auto" }}
+                  style={{ width: "8rem", margin: "0" }}
                 ></img>
               </a>
             </div>
