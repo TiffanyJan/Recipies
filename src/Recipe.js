@@ -69,7 +69,7 @@ export default function Recipie(props) {
       return <a href={recipeDetails.sourceUrl}>{recipeDetails.sourceUrl}</a>;
     }
   }
-
+  
   const extractRecipeDetails = (moreRecipeDetails) => {
     if (moreRecipeDetails) {
       let steps = moreRecipeDetails.map((moreRecipeDetail) =>
