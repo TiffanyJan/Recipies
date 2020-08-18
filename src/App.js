@@ -11,19 +11,16 @@ function App() {
   return (
     <>
       <Navbar className="color-nav" variant="light">
-        <Navbar.Brand href="#Recipies">  
-        <Nav.Link>
-            <Link to="/"> Recipies </Link>
+        <Nav.Link as={Link} to="/">
+         Recipies
           </Nav.Link>
-        </Navbar.Brand>
-
         <Nav className="mr-auto">
-          <Nav.Link>
-            <Link to="/"> Home </Link>
+          <Nav.Link as={Link} to="/">
+               Home 
           </Nav.Link>
           
-          <Nav.Link>
-            <Link to="/NewRecipiesPage"> New Recipies </Link>
+          <Nav.Link as={Link} to="/NewRecipiesPage">
+             New Recipies 
           </Nav.Link>
         </Nav>
       </Navbar>

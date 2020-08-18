@@ -4,6 +4,11 @@ import "bootstrap/dist/css/bootstrap.min.css";
 export default function Recipie(props) {
   const [moreRecipeDetails, setMoreRecipeDetails] = useState();
 
+
+  useEffect(() => {
+    getMoreRecipeDetails(390739);
+  }, []);
+
   function getMoreRecipeDetails(id) {
     //         fetch(
     //               `https://api.spoonacular.com/recipes/${id}/analyzedInstructions?apiKey=${process.env.REACT_APP_API_KEY}`
@@ -52,9 +57,7 @@ export default function Recipie(props) {
     setMoreRecipeDetails(mockData);
   }
 
-  useEffect(() => {
-    getMoreRecipeDetails(390739);
-  }, []);
+
 
   function stripHtml(summary) {
     var tmp = document.createElement("DIV");
@@ -69,13 +72,13 @@ export default function Recipie(props) {
       return <a href={recipeDetails.sourceUrl}>{recipeDetails.sourceUrl}</a>;
     }
   }
-  
+
   const extractRecipeDetails = (moreRecipeDetails) => {
     if (moreRecipeDetails) {
       let steps = moreRecipeDetails.map((moreRecipeDetail) =>
         moreRecipeDetail.steps.map((stepItem) => stepItem.step)
       );
-
+      console.log(steps.map((step) => step[0]))
      return steps.map((step) => step[0])
     }
   };
@@ -114,7 +117,7 @@ export default function Recipie(props) {
       return (
         <>
           <div className="heading">
-            <h1>Cri sp Side Salad</h1>
+            <h1>Crisp Side Salad</h1>
           </div>
           <div className="row mt-2">
             <img src="https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/recipe/recipe-image/2020/01/gnocchi.jpg?itok=clE5PO6D  "></img>

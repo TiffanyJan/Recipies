@@ -5,7 +5,6 @@ import { Route, Switch, Link,  } from "react-router-dom";
 
 export default function Suggestions(props) {
 
-  
   function getRecipieDetails(id){
     fetch(
           `https://api.spoonacular.com/recipes/${id}/information?apiKey=${process.env.REACT_APP_API_KEY}`
