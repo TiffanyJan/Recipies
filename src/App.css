@@ -22,9 +22,15 @@
   font-weight: "bold";
   text-align: center;
 }
+img {
+  vertical-align: middle;
+  border-style: none;
+  padding-top: 90px;
+}
 
 .row .mt-2 {
   font-family: "Courier New";
+  text-align: center;
 }
 
 .mt-2, .my-2 {

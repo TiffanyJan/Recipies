@@ -73,19 +73,32 @@ export default function Recipie(props) {
     }
   }
 
-  const extractRecipeDetails = (moreRecipeDetails) => {
-    if (moreRecipeDetails) {
-      let steps = moreRecipeDetails.map((moreRecipeDetail) =>
-        moreRecipeDetail.steps.map((stepItem) => stepItem.step)
-      );
-      console.log(steps.map((step) => step[0]))
-     return steps.map((step) => step[0])
-    }
+  const extractRecipeStep = (moreRecipeDetails) => {
+      if(!moreRecipeDetails)
+        return 
+        else {
+          console.log(moreRecipeDetails[0].steps[0])
+          return  moreRecipeDetails[0].steps[0].step
+
+        }
   };
+
+  
+
+  const extractRecipeInstructions = (moreRecipeDetails) => {
+    if(!moreRecipeDetails)
+      return 
+      else {
+        console.log(moreRecipeDetails[0].steps[0])
+        return  moreRecipeDetails[0].steps[0].ingredients[0].name
+
+      }
+
+};
+
 
   const showRecipe = (recipeDetails) => {
     if (recipeDetails) {
-      console.log(recipeDetails);
       return (
         <>
           <div>
@@ -100,8 +113,7 @@ export default function Recipie(props) {
               <div className="col-sm">{stripHtml(recipeDetails.summary)}</div>
 
               <div className="col-sm">
-                {getMoreRecipeDetails(recipeDetails.id)}
-                {moreRecipeDetails}
+                {moreRecipeDetails[0].steps[0].step}
               </div>
             </div>
             <div className="row mt-2">Servings:{recipeDetails.servings}</div>
@@ -114,15 +126,20 @@ export default function Recipie(props) {
         </>
       );
     } else {
+
+      ///MOCK HTML
       return (
         <>
           <div className="heading">
             <h1>Crisp Side Salad</h1>
           </div>
           <div className="row mt-2">
-            <img src="https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/recipe/recipe-image/2020/01/gnocchi.jpg?itok=clE5PO6D  "></img>
+            <img src="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/flourless-brownies-36d824c.jpg?webp=true&quality=90&resize=440%2C400"></img>
             <div className="col-sm">
-              {extractRecipeDetails(moreRecipeDetails)}
+              {extractRecipeStep(moreRecipeDetails)}
+            </div>
+            <div className="col-sm">
+              {extractRecipeInstructions(moreRecipeDetails)}
             </div>
           </div>
           <div className="row mt-2">Servings: 5</div>
