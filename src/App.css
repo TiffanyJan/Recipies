@@ -25,12 +25,27 @@
 img {
   vertical-align: middle;
   border-style: none;
-  padding-top: 90px;
+  padding-top: 34px;
+  padding-bottom:34px;
 }
 
 .row .mt-2 {
   font-family: "Courier New";
   text-align: center;
+}
+
+.subHeading{
+  font-family: "Courier New";
+}
+
+.h1, h1 {
+  font-size: 2.5rem;
+  font-weight: 900;
+}
+
+.h2, h2 {
+  font-size: 2rem;
+  font-weight: 900;
 }
 
 .mt-2, .my-2 {

@@ -31,10 +31,17 @@ export default function Recipie(props) {
               </div>
               <div className="col-sm">{stripHtml(recipeDetails.summary)}</div>
             </div>
-            <div className="row mt-2">Servings:{recipeDetails.servings}</div>
+            <div className="row mt-2">
+              <div className="subHeading">
+              <h2>Servings:</h2>
+              </div>
+              {recipeDetails.servings}</div>
             <div className="row mt-2">
               <div className="col-sm">
-                Instructions: {instructions(recipeDetails)}
+              <div className="subHeading">
+                <h2>Instructions:</h2>
+                </div>
+                {instructions(recipeDetails)}
               </div>
             </div>
           </div>
