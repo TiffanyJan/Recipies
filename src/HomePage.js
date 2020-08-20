@@ -69,7 +69,7 @@ export default function HomePage(props) {
           setSuggestions(uniqueArray);
           setShowSuggestions(true);
         });
-    } else if (event.target.value.length <= 3) {
+    } else if (event.target && event.target.value.length <= 3) {
       setShowSuggestions(false);
     }
   }
