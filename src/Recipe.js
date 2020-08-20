@@ -35,7 +35,10 @@ export default function Recipie(props) {
               <div className="subHeading">
               <h2>Servings:</h2>
               </div>
-              {recipeDetails.servings}</div>
+              <div className="servings">
+              {recipeDetails.servings}
+              </div>
+              </div>
             <div className="row mt-2">
               <div className="col-sm">
               <div className="subHeading">

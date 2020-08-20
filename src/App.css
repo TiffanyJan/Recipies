@@ -38,6 +38,11 @@ img {
   font-family: "Courier New";
 }
 
+.servings{
+  font-family: "Courier New";
+  font-size: medium;
+}
+
 .h1, h1 {
   font-size: 2.5rem;
   font-weight: 900;
