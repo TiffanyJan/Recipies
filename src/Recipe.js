@@ -17,10 +17,11 @@ export default function Recipie(props) {
       let splitsentences = recipeDetails.instructions.split('. ')
     let trimmedSentences = splitsentences.map(sentence =>sentence.trim())
     console.log(trimmedSentences)
-      
-      return trimmedSentences.map(trimmedsentence =>
+
+
+      return trimmedSentences.map((trimmedsentence,index) =>
         <div>
-          {trimmedsentence}
+         {index} {trimmedsentence}
         </div>
       )
     } else {
