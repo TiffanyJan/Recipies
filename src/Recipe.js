@@ -3,6 +3,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function Recipie(props) {
 
+  const [instructionDetails,setInstructionDetails]= useState('');
+
   function stripHtml(summary) {
     var tmp = document.createElement("DIV");
     tmp.innerHTML = summary;
@@ -11,7 +13,16 @@ export default function Recipie(props) {
 
   function instructions(recipeDetails) {
     if (recipeDetails.instructions) {
-      return recipeDetails.instructions;
+
+      let splitsentences = recipeDetails.instructions.split('. ')
+    let trimmedSentences = splitsentences.map(sentence =>sentence.trim())
+    console.log(trimmedSentences)
+      
+      return trimmedSentences.map(trimmedsentence =>
+        <div>
+          {trimmedsentence}
+        </div>
+      )
     } else {
       return <a href={recipeDetails.sourceUrl}>{recipeDetails.sourceUrl}</a>;
     }
