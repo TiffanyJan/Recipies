@@ -21,7 +21,7 @@ export default function Recipie(props) {
 
       return trimmedSentences.map((trimmedsentence,index) =>
         <div>
-         {index} {trimmedsentence}
+         {index+1} {trimmedsentence}
         </div>
       )
     } else {
