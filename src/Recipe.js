@@ -2,8 +2,7 @@ import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function Recipie(props) {
-
-  const [instructionDetails,setInstructionDetails]= useState('');
+  const [instructionDetails, setInstructionDetails] = useState("");
 
   function stripHtml(summary) {
     var tmp = document.createElement("DIV");
@@ -13,17 +12,16 @@ export default function Recipie(props) {
 
   function instructions(recipeDetails) {
     if (recipeDetails.instructions) {
+      let splitsentences = recipeDetails.instructions.split(". ");
+      let trimmedSentences = splitsentences.map((sentence) => sentence.trim());
+      console.log(trimmedSentences);
 
-      let splitsentences = recipeDetails.instructions.split('. ')
-    let trimmedSentences = splitsentences.map(sentence =>sentence.trim())
-    console.log(trimmedSentences)
-
-
-      return trimmedSentences.map((trimmedsentence,index) =>
-        <div>
-         {index+1} {trimmedsentence}
+      return trimmedSentences.map((trimmedsentence, index) => (
+        <div className="row mt-1">
+            <div className="indexText">{index + 1} </div>
+          <div> {trimmedsentence}</div>
         </div>
-      )
+      ));
     } else {
       return <a href={recipeDetails.sourceUrl}>{recipeDetails.sourceUrl}</a>;
     }
@@ -45,16 +43,14 @@ export default function Recipie(props) {
             </div>
             <div className="row mt-2">
               <div className="subHeading">
-              <h2>Servings:</h2>
+                <h2>Servings:</h2>
               </div>
-              <div className="servings">
-              {recipeDetails.servings}
-              </div>
-              </div>
+              <div className="servings">{recipeDetails.servings}</div>
+            </div>
             <div className="row mt-2">
               <div className="col-sm">
-              <div className="subHeading">
-                <h2>Instructions:</h2>
+                <div className="subHeading">
+                  <h2>Instructions:</h2>
                 </div>
                 {instructions(recipeDetails)}
               </div>

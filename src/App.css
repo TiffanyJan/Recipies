@@ -106,6 +106,15 @@ img {
   text-align:right
 }
 
+.indexText{
+  font-weight: 900;
+  text-align: right;
+}
+
+.row-mt-1{
+  margin: auto; max-width: 300px;
+}
+
 .col-sm{
   font-family: "Courier New";
   margin: auto;
