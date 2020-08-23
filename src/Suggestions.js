@@ -15,7 +15,6 @@ export default function Suggestions(props) {
           })
 }
 
-
   function showSuggestions() {
     if (props.showSuggestions == true) {
       return "container";

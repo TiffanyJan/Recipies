@@ -121,6 +121,11 @@ img {
   text-align:left
 }
 
+.minutes{
+  font-family: "Courier New";
+  font-weight: 900;
+}
+
 html {
   height: 100%; 
 }

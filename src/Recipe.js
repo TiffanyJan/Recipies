@@ -2,7 +2,6 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function Recipie(props) {
-
   function stripHtml(summary) {
     var tmp = document.createElement("DIV");
     tmp.innerHTML = summary;
@@ -10,7 +9,6 @@ export default function Recipie(props) {
   }
 
   function instructions(recipeDetails) {
- 
     if (recipeDetails.instructions) {
       let splitsentences = recipeDetails.instructions.split(". ");
       let trimmedSentences = splitsentences.map((sentence) => sentence.trim());
@@ -28,13 +26,12 @@ export default function Recipie(props) {
     }
   }
 
-  function minutes(recipeDetails){
-    if(recipeDetails.cookingMinutes){
-    return <div>{recipeDetails.cookingMinutes}</div>
+  function minutes(recipeDetails) {
+    if (recipeDetails.cookingMinutes) {
+      return <div>{recipeDetails.cookingMinutes}</div>;
     }
   }
-//show cuisines + cookingMinutes: 80
-
+  //show cuisines
 
   const showRecipe = (recipeDetails) => {
     if (recipeDetails) {
@@ -50,14 +47,24 @@ export default function Recipie(props) {
               </div>
               <div className="col-sm">{stripHtml(recipeDetails.summary)}</div>
             </div>
+
             <div className="row mt-2">
-              <div className="servings"> Servings:{recipeDetails.servings}</div>
-      <div className="minutes">Cooking Time:{minutes(recipeDetails)} minutes</div>
+              <div className="col-sm">
+                <div className="servings">
+                  Servings:{recipeDetails.servings}
+                </div>
+              </div>
+              <div className="col-sm">
+                <div className="minutes">
+                  Cooking Time:{minutes(recipeDetails)} minutes
+                </div>
+              </div>
             </div>
+
             <div className="row mt-2">
               <div className="col-sm">
                 <div className="subHeading">
-                  <h2 >Instructions:</h2>
+                  <h2>Instructions:</h2>
                 </div>
                 {instructions(recipeDetails)}
               </div>
