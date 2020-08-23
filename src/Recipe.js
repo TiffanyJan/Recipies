@@ -18,8 +18,10 @@ export default function Recipie(props) {
 
       return trimmedSentences.map((trimmedsentence, index) => (
         <div className="row mt-1  justify-content-center">
+          <div className="col-sm-1">
             <div className="indexText">{index + 1} </div>
-          <div> {trimmedsentence}</div>
+          </div>
+          <div className="col-sm-5">{trimmedsentence}</div>
         </div>
       ));
     } else {
@@ -42,15 +44,12 @@ export default function Recipie(props) {
               <div className="col-sm">{stripHtml(recipeDetails.summary)}</div>
             </div>
             <div className="row mt-2">
-              <div className="subHeading">
-                <h2>Servings:</h2>
-              </div>
-              <div className="servings">{recipeDetails.servings}</div>
+              <div className="servings"> Servings:{recipeDetails.servings}</div>
             </div>
             <div className="row mt-2">
               <div className="col-sm">
                 <div className="subHeading">
-                  <h2>Instructions:</h2>
+                  <h2 >Instructions:</h2>
                 </div>
                 {instructions(recipeDetails)}
               </div>
