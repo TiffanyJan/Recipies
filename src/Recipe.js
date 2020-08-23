@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function Recipie(props) {
-  const [instructionDetails, setInstructionDetails] = useState("");
 
   function stripHtml(summary) {
     var tmp = document.createElement("DIV");
@@ -11,10 +10,10 @@ export default function Recipie(props) {
   }
 
   function instructions(recipeDetails) {
+ 
     if (recipeDetails.instructions) {
       let splitsentences = recipeDetails.instructions.split(". ");
       let trimmedSentences = splitsentences.map((sentence) => sentence.trim());
-      console.log(trimmedSentences);
 
       return trimmedSentences.map((trimmedsentence, index) => (
         <div className="row mt-1  justify-content-center">
@@ -28,6 +27,14 @@ export default function Recipie(props) {
       return <a href={recipeDetails.sourceUrl}>{recipeDetails.sourceUrl}</a>;
     }
   }
+
+  function minutes(recipeDetails){
+    if(recipeDetails.cookingMinutes){
+    return <div>{recipeDetails.cookingMinutes}</div>
+    }
+  }
+//show cuisines + cookingMinutes: 80
+
 
   const showRecipe = (recipeDetails) => {
     if (recipeDetails) {
@@ -45,6 +52,7 @@ export default function Recipie(props) {
             </div>
             <div className="row mt-2">
               <div className="servings"> Servings:{recipeDetails.servings}</div>
+      <div className="minutes">Minutes:{minutes(recipeDetails)}</div>
             </div>
             <div className="row mt-2">
               <div className="col-sm">
