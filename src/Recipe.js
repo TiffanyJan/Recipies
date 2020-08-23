@@ -17,7 +17,7 @@ export default function Recipie(props) {
       console.log(trimmedSentences);
 
       return trimmedSentences.map((trimmedsentence, index) => (
-        <div className="row mt-1">
+        <div className="row mt-1  justify-content-center">
             <div className="indexText">{index + 1} </div>
           <div> {trimmedsentence}</div>
         </div>
