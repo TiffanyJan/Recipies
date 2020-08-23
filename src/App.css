@@ -26,6 +26,7 @@ img {
   vertical-align: middle;
   border-style: none;
   box-shadow: 8px 8px 7px #ccc;
+  
 }
 
 .row .mt-2 {
@@ -36,6 +37,7 @@ img {
 .subHeading{
   font-family: "Courier New";
   text-align: center;
+  font-weight: 900;
 }
 
 .servings {
@@ -44,12 +46,12 @@ img {
   font-weight: 900;
 }
 
-.h1 {
+.h1,h1 {
   font-size: 2.5rem;
   font-weight: 900;
 }
 
-.h2 {
+.h2,h2 {
   font-size: 2rem;
   font-weight: 900;
   text-align:center;
@@ -112,7 +114,11 @@ img {
   font-family: "Courier New";
   margin: auto;
   display: block;
-  text-align: left;
+  text-align: center;
+}
+
+.col-sm-5{
+  text-align:left
 }
 
 html {
