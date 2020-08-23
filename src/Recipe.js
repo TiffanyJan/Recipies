@@ -16,7 +16,7 @@ export default function Recipie(props) {
       let trimmedSentences = splitsentences.map((sentence) => sentence.trim());
 
       return trimmedSentences.map((trimmedsentence, index) => (
-        <div className="row mt-1  justify-content-center">
+        <div className="row mt-1  justify-content-center" key={index}>
           <div className="col-sm-1">
             <div className="indexText">{index + 1} </div>
           </div>
@@ -52,7 +52,7 @@ export default function Recipie(props) {
             </div>
             <div className="row mt-2">
               <div className="servings"> Servings:{recipeDetails.servings}</div>
-      <div className="minutes">Minutes:{minutes(recipeDetails)}</div>
+      <div className="minutes">Cooking Time:{minutes(recipeDetails)} minutes</div>
             </div>
             <div className="row mt-2">
               <div className="col-sm">
