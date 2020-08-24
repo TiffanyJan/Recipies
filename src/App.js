@@ -5,7 +5,6 @@ import NewRecipiesPage from "./NewRecipiesPage";
 import HomePage from "./HomePage";
 import Recipe from "./Recipe";
 
-
 function App() {
   const [recipeDetails, setRecipeDetails] = useState();
 
@@ -21,7 +20,7 @@ function App() {
           </Nav.Link>
           
           <Nav.Link as={Link} to="/NewRecipiesPage">
-             New Recipies 
+         
           </Nav.Link>
         </Nav>
       </Navbar>
