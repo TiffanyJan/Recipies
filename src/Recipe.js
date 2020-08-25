@@ -34,9 +34,12 @@ export default function Recipie(props) {
   }
 
   function cuisine(recipeDetails){
-    console.log(recipeDetails.cuisines)
+    console.log(recipeDetails)
     if(recipeDetails.cuisines){
     return recipeDetails.cuisines.map ((cuisine)=> <div>{cuisine}</div>)
+    }
+    else{
+      return
     }
   }
 

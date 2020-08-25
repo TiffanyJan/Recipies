@@ -8,6 +8,7 @@ import vegImg from "./veg-bake.jpg";
 import fishImg from "./fish.jpeg";
 import Suggestions from "./Suggestions";
 import RecipieList from "./RecipieList";
+import Smoothie from "./Smoothie.jpg";
 
 export default function HomePage(props) {
   const [todos, setTodos] = useState([]);
@@ -76,13 +77,12 @@ export default function HomePage(props) {
   return (
     <>
       <div className="heading">
-        <h1>Popular Recipies of The Week</h1>
+        <h1>Recipies</h1>
       </div>
       <div className="row mt-2">
         {popularRecipies.map((recipies) => (
           <div key={recipies.title} style={{ margin: "0 auto" }}>
             <div className="row mt-2">{recipies.title}</div>
-
             <div className="row mt-2">
               <a href={recipies.link}>
                 <img
@@ -98,7 +98,7 @@ export default function HomePage(props) {
       </div>
 
       <RecipieList todos={todos} setTodos={setTodos} />
-      <div className="row mt-2" align="center"></div>
+      <div className="row mt-2" align="center">
       <div className="container">
         <div className="row mt-3">
           <Form inline className="text-center">
@@ -112,12 +112,19 @@ export default function HomePage(props) {
           </Form>
         </div>
       </div>
+      </div>
       <Suggestions
         suggestions={suggestions}
         showSuggestions={showSuggestions}
         setRecipeDetails={props.setRecipeDetails}
       />
-
+      <div className="row mt-2" align="center">
+      <div className="container">
+      <div className="heading">
+        <h1>All Time Favourite Recipies</h1>
+        </div>
+      </div>
+      </div>
       
     </>
   );
