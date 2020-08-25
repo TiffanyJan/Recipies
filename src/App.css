@@ -42,8 +42,9 @@ img {
 
 .servings {
   font-family: "Courier New";
-  font-size: 35px;
+  font-size: 26px;
   font-weight: 900;
+
 }
 
 .h1,h1 {
@@ -124,6 +125,7 @@ img {
 .minutes{
   font-family: "Courier New";
   font-weight: 900;
+  font-size: 26px;
 }
 
 html {
