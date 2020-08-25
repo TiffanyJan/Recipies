@@ -27,11 +27,19 @@ export default function Recipie(props) {
   }
 
   function minutes(recipeDetails) {
+
     if (recipeDetails.cookingMinutes) {
       return <div>{recipeDetails.cookingMinutes}</div>;
     }
   }
-  //show cuisines
+
+  function cuisine(recipeDetails){
+    console.log(recipeDetails.cuisines)
+    if(recipeDetails.cuisines){
+    return recipeDetails.cuisines.map ((cuisine)=> <div>{cuisine}</div>)
+    }
+  }
+
 
   const showRecipe = (recipeDetails) => {
     if (recipeDetails) {
@@ -57,6 +65,9 @@ export default function Recipie(props) {
               <div className="col-sm">
                 <div className="minutes">
                   Cooking Time:{minutes(recipeDetails)} minutes
+                </div>
+                <div className="cuisine">
+                  Cuisine: {cuisine(recipeDetails)}
                 </div>
               </div>
             </div>
