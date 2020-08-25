@@ -9,6 +9,9 @@ import fishImg from "./fish.jpeg";
 import Suggestions from "./Suggestions";
 import RecipieList from "./RecipieList";
 import Smoothie from "./Smoothie.jpg";
+import cookies from "./cookies.jpg";
+import pasta from "./pasta.jpg";
+import breakfast from "./breakfast.jpg";
 
 export default function HomePage(props) {
   const [todos, setTodos] = useState([]);
