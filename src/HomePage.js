@@ -40,6 +40,31 @@ export default function HomePage(props) {
     },
   ]);
 
+  const [favouriteRecipies,setFavouriteRecipies] = useState([
+    {
+    title: "smoothie",
+    image: Smoothie,
+    link: "https://www.bbc.co.uk/food/recipes/blackberry_and_apple_39192",
+    },
+    {
+      title:"cookies",
+      image: cookies,
+      link: "https://www.bbc.co.uk/food/recipes/anytimecookies_92185",
+    },
+    {
+      title:"Pasta",
+      image: pasta,
+      link: "https://www.bbc.co.uk/food/collections/6_easy_spaghetti_suppers",
+    },
+    {
+      title: "breakfasts",
+      image: breakfast,
+      link:"https://www.bbc.co.uk/food/search?q=breakfast",
+    }
+
+  ]);
+
+
   const [suggestions, setSuggestions] = useState([]);
 
   const [showSuggestions, setShowSuggestions] = useState(false);
@@ -122,10 +147,25 @@ export default function HomePage(props) {
         setRecipeDetails={props.setRecipeDetails}
       />
       <div className="row mt-2" align="center">
-      <div className="container">
       <div className="heading">
         <h1>All Time Favourite Recipies</h1>
         </div>
+        <div className="row mt-2">
+        {favouriteRecipies.map((recipies) => (
+          <div key={recipies.title} style={{ margin: "0 auto" }}>
+            <div className="row mt-2">{recipies.title}</div>
+            <div className="row mt-2">
+              <a href={recipies.link}>
+                <img
+                  className="card-img-top"
+                  src={recipies.image}
+                  alt="Image"
+                  style={{ width: "8rem", margin: "0" }}
+                ></img>
+              </a>
+            </div>
+          </div>
+        ))}
       </div>
       </div>
       
