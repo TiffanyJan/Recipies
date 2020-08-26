@@ -2,10 +2,10 @@ import React, { useState, useRef, useCallback } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import {  Form, FormControl, Button,} from "react-bootstrap";
 import "./App.css";
-import pastaImg from "./caponata-pasta_1.jpg";
-import chickenImg from "./chicken-thighs.png";
-import vegImg from "./veg-bake.jpg";
-import fishImg from "./fish.jpeg";
+import pastaImg from "./penne.jpg";
+import chickenImg from "./chickenThighs.jpg";
+import vegImg from "./curryTrayBake.jpg";
+import fishImg from "./fish.jpg";
 import Suggestions from "./Suggestions";
 import RecipieList from "./RecipieList";
 import Smoothie from "./Smoothie.jpg";
@@ -29,7 +29,7 @@ export default function HomePage(props) {
         "https://www.countryliving.com/food-drinks/a28942039/crispy-chicken-thighs-with-garlic-and-rosemary-recipe/",
     },
     {
-      title: "Aloo Gobi Tray Bake",
+      title: "Curry Tray Bake",
       image: vegImg,
       link: "https://realfood.tesco.com/recipes/aloo-gobi-traybake.html",
     },
