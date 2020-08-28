@@ -148,7 +148,7 @@ export default function HomePage(props) {
       />
       <div className="row mt-2" align="center">
       <div className="heading">
-        <h1>All Time Favourite Recipies</h1>
+        <h1>All Time Favourites</h1>
         </div>
         <div className="row mt-2">
         {favouriteRecipies.map((recipies) => (
